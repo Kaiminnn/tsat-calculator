@@ -46,60 +46,6 @@ export default function Home() {
         </section>
 
         <div className={styles.calculatorGrid}>
-          <section className={styles.calculatorCard} aria-labelledby="tsat-title">
-            <div className={styles.cardHeader}>
-              <h2 id="tsat-title">TSAT</h2>
-              <p>Transferrin saturation</p>
-            </div>
-
-            <form className={styles.calculator} onSubmit={handleTsatSubmit} noValidate>
-              <label className={styles.field}>
-                <span>Serum iron</span>
-                <div className={styles.inputWrap}>
-                  <input
-                    inputMode="decimal"
-                    name="serumIron"
-                    onChange={(event) => setSerumIron(event.target.value)}
-                    placeholder="80"
-                    type="text"
-                    value={serumIron}
-                  />
-                  <span aria-hidden="true">ug/dL</span>
-                </div>
-              </label>
-
-              <label className={styles.field}>
-                <span>TIBC</span>
-                <div className={styles.inputWrap}>
-                  <input
-                    inputMode="decimal"
-                    name="tibc"
-                    onChange={(event) => setTibc(event.target.value)}
-                    placeholder="320"
-                    type="text"
-                    value={tibc}
-                  />
-                  <span aria-hidden="true">ug/dL</span>
-                </div>
-              </label>
-
-              <button type="submit">Calculate TSAT</button>
-            </form>
-
-            <section className={styles.result} aria-live="polite">
-              {tsatSubmitted && tsatResult.ok ? (
-                <>
-                  <span className={styles.resultLabel}>TSAT</span>
-                  <strong>{tsatResult.formatted}%</strong>
-                </>
-              ) : tsatSubmitted && tsatErrorMessage ? (
-                <p className={styles.error}>{tsatErrorMessage}</p>
-              ) : (
-                <p className={styles.placeholder}>Result will appear here.</p>
-              )}
-            </section>
-          </section>
-
           <section className={styles.calculatorCard} aria-labelledby="ccr-title">
             <div className={styles.cardHeader}>
               <h2 id="ccr-title">CCr</h2>
@@ -190,6 +136,60 @@ export default function Home() {
                 </>
               ) : ccrSubmitted && ccrErrorMessage ? (
                 <p className={styles.error}>{ccrErrorMessage}</p>
+              ) : (
+                <p className={styles.placeholder}>Result will appear here.</p>
+              )}
+            </section>
+          </section>
+
+          <section className={styles.calculatorCard} aria-labelledby="tsat-title">
+            <div className={styles.cardHeader}>
+              <h2 id="tsat-title">TSAT</h2>
+              <p>Transferrin saturation</p>
+            </div>
+
+            <form className={styles.calculator} onSubmit={handleTsatSubmit} noValidate>
+              <label className={styles.field}>
+                <span>Serum iron</span>
+                <div className={styles.inputWrap}>
+                  <input
+                    inputMode="decimal"
+                    name="serumIron"
+                    onChange={(event) => setSerumIron(event.target.value)}
+                    placeholder="80"
+                    type="text"
+                    value={serumIron}
+                  />
+                  <span aria-hidden="true">ug/dL</span>
+                </div>
+              </label>
+
+              <label className={styles.field}>
+                <span>TIBC</span>
+                <div className={styles.inputWrap}>
+                  <input
+                    inputMode="decimal"
+                    name="tibc"
+                    onChange={(event) => setTibc(event.target.value)}
+                    placeholder="320"
+                    type="text"
+                    value={tibc}
+                  />
+                  <span aria-hidden="true">ug/dL</span>
+                </div>
+              </label>
+
+              <button type="submit">Calculate TSAT</button>
+            </form>
+
+            <section className={styles.result} aria-live="polite">
+              {tsatSubmitted && tsatResult.ok ? (
+                <>
+                  <span className={styles.resultLabel}>TSAT</span>
+                  <strong>{tsatResult.formatted}%</strong>
+                </>
+              ) : tsatSubmitted && tsatErrorMessage ? (
+                <p className={styles.error}>{tsatErrorMessage}</p>
               ) : (
                 <p className={styles.placeholder}>Result will appear here.</p>
               )}
