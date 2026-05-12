@@ -38,7 +38,7 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.header} aria-labelledby="page-title">
           <p className={styles.eyebrow}>Medical calculator</p>
-          <h1 id="page-title">TSAT and CCr Calculator</h1>
+          <h1 id="page-title">Medical Calculator</h1>
           <p>
             Calculate transferrin saturation and estimated creatinine clearance
             from common lab values.
