@@ -7,7 +7,7 @@
 }
 
 .main {
-  width: min(100%, 560px);
+  width: min(100%, 980px);
   margin: 0 auto;
   padding: 32px 0;
 }
@@ -36,9 +36,16 @@
   color: #4d615e;
   font-size: 17px;
   line-height: 1.55;
+  max-width: 640px;
 }
 
-.calculator {
+.calculatorGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.calculatorCard {
   background: #ffffff;
   border: 1px solid #d8e5e2;
   border-radius: 8px;
@@ -46,6 +53,29 @@
   display: grid;
   gap: 18px;
   padding: 20px;
+}
+
+.cardHeader {
+  border-bottom: 1px solid #e5eeec;
+  padding-bottom: 14px;
+}
+
+.cardHeader h2 {
+  color: #0f2f2c;
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.cardHeader p {
+  color: #5d716e;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.calculator {
+  display: grid;
+  gap: 18px;
 }
 
 .field {
@@ -115,6 +145,39 @@
   transform: translateY(1px);
 }
 
+.sexGroup {
+  border: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.sexGroup legend {
+  color: #243b38;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sexGroup label {
+  align-items: center;
+  background: #f8fbfa;
+  border: 1px solid #cbdad7;
+  border-radius: 8px;
+  color: #243b38;
+  display: flex;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 14px;
+}
+
+.sexGroup input {
+  accent-color: #11685f;
+  height: 18px;
+  width: 18px;
+}
+
 .result {
   align-items: center;
   background: #123e3a;
@@ -134,8 +197,17 @@
 }
 
 .result strong {
+  align-items: baseline;
+  display: flex;
   font-size: 44px;
+  gap: 8px;
   line-height: 1;
+}
+
+.result small {
+  color: #bde5df;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .placeholder,
@@ -167,6 +239,14 @@
   }
 
   .calculator {
+    gap: 16px;
+  }
+
+  .calculatorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculatorCard {
     padding: 18px;
   }
 
@@ -174,5 +254,10 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .result strong {
+    flex-direction: column;
+    gap: 4px;
   }
 }
