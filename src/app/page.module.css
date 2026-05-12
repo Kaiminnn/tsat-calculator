@@ -1,0 +1,178 @@
+.page {
+  min-height: 100svh;
+  background: #eef5f4;
+  color: #172523;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 24px;
+}
+
+.main {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #29756b;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  color: #0f2f2c;
+  font-size: 38px;
+  font-weight: 760;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.header p {
+  color: #4d615e;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.calculator {
+  background: #ffffff;
+  border: 1px solid #d8e5e2;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(31, 73, 67, 0.12);
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field > span {
+  color: #243b38;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.inputWrap {
+  align-items: center;
+  background: #f8fbfa;
+  border: 1px solid #cbdad7;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  min-height: 56px;
+  overflow: hidden;
+}
+
+.inputWrap:focus-within {
+  border-color: #24786f;
+  box-shadow: 0 0 0 4px rgba(36, 120, 111, 0.14);
+}
+
+.inputWrap input {
+  appearance: textfield;
+  background: transparent;
+  border: 0;
+  color: #102522;
+  font: inherit;
+  font-size: 20px;
+  min-width: 0;
+  outline: 0;
+  padding: 16px;
+}
+
+.inputWrap input::placeholder {
+  color: #9aa9a6;
+}
+
+.inputWrap span {
+  color: #617571;
+  font-size: 15px;
+  font-weight: 700;
+  padding-right: 16px;
+}
+
+.calculator button {
+  background: #11685f;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 800;
+  min-height: 54px;
+  padding: 14px 18px;
+}
+
+.calculator button:active {
+  transform: translateY(1px);
+}
+
+.result {
+  align-items: center;
+  background: #123e3a;
+  border-radius: 8px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  min-height: 104px;
+  padding: 22px;
+}
+
+.resultLabel {
+  color: #bde5df;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.result strong {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.placeholder,
+.error {
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.placeholder {
+  color: #d7e9e6;
+}
+
+.error {
+  color: #ffd7d7;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 18px;
+  }
+
+  .main {
+    padding: 20px 0;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .calculator {
+    padding: 18px;
+  }
+
+  .result {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
